@@ -8,25 +8,27 @@ function UserCard(props) {
     props.userInfo;
 
   return (
-    <article>
-      <section>
-        <img src={imageSrc} alt={userName}></img>
-        <div>{userName}</div>
-        <div>{email}</div>
+    <article className={styles.userCard}>
+      <section className={styles.imageSection}>
+        <img className={styles.userImage} src={imageSrc} alt={userName}></img>
+        <div className={styles.imageInfo}>
+          <div className={styles.userName}>{userName}</div>
+          <div className={styles.userEmail}>{email}</div>
+        </div>
       </section>
       <AddButton gender={gender} />
-      <section>
-        <div>
+      <section className={styles.infoSection}>
+        <div className={styles.infoElement}>
           <span>Tweets</span>
-          <div>{tweets}</div>
+          <div className={styles.followersInfo}>{tweets}</div>
         </div>
-        <div>
+        <div className={styles.infoElement}>
           <span>Following</span>
-          <div>{following}</div>
+          <div className={styles.followersInfo}>{following}</div>
         </div>
-        <div>
+        <div className={styles.infoElement}>
           <span>Followers</span>
-          <div>{followers}</div>
+          <div className={styles.followersInfo}>{followers}</div>
         </div>
       </section>
     </article>

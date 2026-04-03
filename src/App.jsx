@@ -13,9 +13,9 @@ function App() {
   };
 
   return (
-    <>
+    <section className="cardSection">
       <UserCard userInfo={userInfo} />
-    </>
+    </section>
   );
 }
 

@@ -2,9 +2,9 @@ import styles from './AddButton.module.css';
 
 function AddButton({ gender }) {
   return (
-    <div>
-      <button>+</button>
-    </div>
+    <>
+      <button className={styles.addButton}>+</button>
+    </>
   );
 }
 
