@@ -1,7 +1,11 @@
 import styles from './AddButton.module.css';
 
-function AddButton() {
-  return <button></button>;
+function AddButton({ gender }) {
+  return (
+    <div>
+      <button>+</button>
+    </div>
+  );
 }
 
 export default AddButton;
