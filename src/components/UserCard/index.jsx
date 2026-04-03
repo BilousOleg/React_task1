@@ -1,22 +1,34 @@
 import styles from './UserCard.module.css';
-// Можливо, слід внести усі дочірні компоненти всередину UserCard, оскільки вони навряд чи будуть перевикористані, окрім, можливо, кнопки
-import UserImage from './../UserImage';
 import AddButton from './../AddButton';
-import UserCardInfo from './../UserCardInfo';
 
+// Спочатку вирішив зробити ще розбиття на 3 компоненти, але потім подумав, що вони більше ніде не зможуть бути використані,
+// тому зробив UserCard єдиним компонентом, залишивши тільки кнопку, адже вона потенційно може ще десь бути використана (дивіться коміти)
 function UserCard(props) {
   const { userName, email, gender, imageSrc, tweets, following, followers } =
     props.userInfo;
 
   return (
     <article>
-      <UserImage userName={userName} email={email} imageSrc={imageSrc} />
+      <section>
+        <img src={imageSrc} alt={userName}></img>
+        <div>{userName}</div>
+        <div>{email}</div>
+      </section>
       <AddButton gender={gender} />
-      <UserCardInfo
-        tweets={tweets}
-        following={following}
-        followers={followers}
-      />
+      <section>
+        <div>
+          <span>Tweets</span>
+          <div>{tweets}</div>
+        </div>
+        <div>
+          <span>Following</span>
+          <div>{following}</div>
+        </div>
+        <div>
+          <span>Followers</span>
+          <div>{followers}</div>
+        </div>
+      </section>
     </article>
   );
 }
