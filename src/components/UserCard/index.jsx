@@ -7,8 +7,21 @@ function UserCard(props) {
   const { userName, email, gender, imageSrc, tweets, following, followers } =
     props.userInfo;
 
+  const inlineStyles = {};
+
+  if (gender === 'male') {
+    inlineStyles.boxShadow =
+      '0 0 0.5rem 0.125rem var(--card-shadow-color-male)';
+  } else if (gender === 'female') {
+    inlineStyles.boxShadow =
+      '0 0 0.5rem 0.125rem var(--card-shadow-color-female)';
+  } else {
+    inlineStyles.boxShadow =
+      '0 0 0.5rem 0.125rem var(--card-shadow-color-other)';
+  }
+
   return (
-    <article className={styles.userCard}>
+    <article style={inlineStyles} className={styles.userCard}>
       <section className={styles.imageSection}>
         <img className={styles.userImage} src={imageSrc} alt={userName}></img>
         <div className={styles.imageInfo}>
@@ -16,7 +29,7 @@ function UserCard(props) {
           <div className={styles.userEmail}>{email}</div>
         </div>
       </section>
-      <AddButton gender={gender} />
+      <AddButton />
       <section className={styles.infoSection}>
         <div className={styles.infoElement}>
           <span>Tweets</span>

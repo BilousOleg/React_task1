@@ -1,19 +1,22 @@
 .userCard {
   /* Не знаю точно, чи слід об'являти змінні кольорів, які стосуються лише компонента в корені (:root), тому залишу їх тут */
   --card-height: 450px;
-  --card-shadow-color: #808080;
+  --card-shadow-color-male: rgb(0, 3, 202);
+  --card-shadow-color-female: rgb(173, 0, 216);
+  --card-shadow-color-other: #808080;
   --card-text-color-light: #ffffff;
   --card-text-color-middle: #808080;
+  --default-image-bg-color: rgb(197, 197, 197);
   position: relative;
   width: calc(var(--card-height) / 3 * 2);
   border-radius: 0.5rem;
-  box-shadow: 0 0 0.5rem 0.125rem var(--card-shadow-color);
   overflow: hidden;
 }
 
 .imageSection {
   position: relative;
   height: calc(var(--card-height) / 3 * 2);
+  background-color: var(--default-image-bg-color);
 }
 
 .userImage {
